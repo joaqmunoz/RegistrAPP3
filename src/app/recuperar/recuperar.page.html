@@ -1,0 +1,19 @@
+<ion-content style="--background: #d0fcec;">
+  <div class="user-icon">
+    <ion-icon name="person-circle-outline" (click)="openMenu($event)"></ion-icon>
+  </div>
+  <br><br><br><br><br><br><br>
+  <form class="ion-padding-top" (submit)="sendLinkReset()">
+    <div class="container">
+      <div class="box">
+        <h2>Cambio de contraseña</h2>
+        <ion-item lines="none">
+          <ion-label position="floating">Ingresa tu correo</ion-label>
+          <ion-input type="text" [(ngModel)]="email" name="email" required="true"></ion-input>
+        </ion-item>
+        <ion-button expand="block" class="submit-button" type="submit">Enviar</ion-button>
+      </div>
+    </div>
+  </form>  
+</ion-content>
+

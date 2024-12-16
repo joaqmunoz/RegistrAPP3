@@ -1,0 +1,13 @@
+<ion-content>
+  <div class="container">
+    <img src="/assets/imgs/logo.png" alt="Imagen centrada" (click)="openMenu()"/>
+  </div>
+  <ion-action-sheet
+  [isOpen]="isActionSheetOpen"
+  (didDismiss)="isActionSheetOpen = false"
+  header="Selecciona una opción"
+  cssClass="custom-action-sheet"
+  [buttons]="actionSheetButtons">
+</ion-action-sheet>
+
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="user-icon">
+    <ion-icon name="person-circle-outline" (click)="openMenu($event)"></ion-icon>
+  </div>
+  <br><br><br><br><br>
+  <div class="profile-container">
+    <br><br><br><br><br>    
+    <ion-item>
+      <ion-label class="profile-label">Correo</ion-label>
+      <ion-text class="profile-info">{{ email }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="profile-label">Contraseña</ion-label>
+      <ion-text class="profile-info">********</ion-text> 
+    </ion-item>
+    <br><br><br><br><br>
+
+    <ion-button expand="block" (click)="goToRecuperar()">Reestablecer Contraseña</ion-button>
+  </div>
+</ion-content>

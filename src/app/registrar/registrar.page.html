@@ -1,0 +1,48 @@
+<ion-content>
+  <div class="login-card-container">
+    <ion-button class="volver-button" (click)="goToLogin()">Volver</ion-button>
+    <br><br><br><br><br><br>
+    <ion-card class="login-card">
+      
+      
+      <ion-card-content class="card-content"> 
+        <div *ngIf="errorMessage" class="error-message">
+          <ion-text color="danger">
+            <p>{{ errorMessage }}</p>
+          </ion-text>
+        </div>
+        <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+          <div class="input-container">
+            <ion-item>
+              <ion-label position="floating">Ingrese su RUT</ion-label>
+              <ion-input type="text" class="form-control" formControlName="rut"></ion-input>
+            </ion-item>
+            <p class="input-example">Ejemplo: 12345678</p>
+            <ion-item>
+              <ion-label position="floating">Ingrese su/s nombre/s</ion-label>
+              <ion-input type="text" class="form-control" formControlName="nombres"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Ingrese su/s apellido/s</ion-label>
+              <ion-input type="text"  class="form-control" formControlName="apellidos"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Ingrese su email</ion-label>
+              <ion-input type="email" class="form-control" formControlName="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Ingrese su contraseña</ion-label>
+              <ion-input type="password" class="form-control" formControlName="password"></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="spacer"></div>
+        
+          <ion-button expand="block" type="submit" style="background-color: #63badb; color: white;">Registrarse</ion-button>
+        </form>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

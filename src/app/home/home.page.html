@@ -1,20 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="custom-background">
+  <div class="user-icon">
+    <ion-icon name="person-circle-outline" (click)="openMenu($event)"></ion-icon>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="centered-container">
+    <div class="warning-icon">
+      <ion-icon name="information-circle-outline" (click)="showMessage()"></ion-icon>
+    </div>
+    <ion-button expand="block" class="attendance-button" (click)="openCamera()">
+      Marcar Asistencia
+    </ion-button>
   </div>
 </ion-content>

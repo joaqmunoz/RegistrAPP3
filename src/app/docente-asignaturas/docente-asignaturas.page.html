@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/docente">Volver</ion-button>
+    </ion-buttons>
+    <ion-title>Asignaturas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="ion-padding">
+    <table>
+      <!-- Fila para agregar una nueva asignatura -->
+      <ion-row>
+        <ion-col>
+          <ion-input
+            placeholder="Nombre Asignatura"
+            [(ngModel)]="nuevaAsignaturaNombre"
+            class="input-asignatura"
+          ></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            placeholder="Sección"
+            [(ngModel)]="nuevaAsignaturaSeccion"
+            class="input-asignatura"
+          ></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-button
+            expand="block"
+            (click)="agregarAsignatura()"
+          >
+            Agregar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <!-- Encabezados de la tabla -->
+      <ion-row>
+        <ion-col class="titulo">Asignatura</ion-col>
+        <ion-col class="titulo">Sección</ion-col>
+        <ion-col class="titulo">QR</ion-col>
+      </ion-row>
+
+      <!-- Lista de asignaturas -->
+      <ng-container *ngFor="let asignatura of asignaturas">
+        <ion-row>
+          <ion-col>{{ asignatura.nombre }}</ion-col>
+          <ion-col>{{ asignatura.seccion }}</ion-col>
+          <ion-col>
+            <!-- Botón para generar el QR de la asignatura -->
+            <ion-button (click)="generarQR(asignatura)">
+              Generar QR
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+    </table>
+
+    <!-- Mostrar el código QR generado -->
+    <div *ngIf="qrCodeData" class="qr-container">
+      <ion-img [src]="qrCodeData" alt="Código QR"></ion-img>
+    </div>
+  </div>
+</ion-content>

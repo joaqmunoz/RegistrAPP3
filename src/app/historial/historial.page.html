@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/home">Volver</ion-button>
+    </ion-buttons>
+    <ion-title><strong> Historial de Asistencias </strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="ion-padding">
+    <table>
+      <ion-row>
+        <ion-col class="titulo">Asignatura</ion-col>
+        <ion-col class="titulo">Sección</ion-col>
+        <ion-col class="titulo">Fecha</ion-col>
+        <ion-col class="titulo">Hora</ion-col>
+      </ion-row>
+      <ng-container *ngIf="asistencia && asistencia.length > 0">
+        <ion-row *ngFor="let item of asistencia">
+          <ion-col>{{ item.nombre }}</ion-col>
+          <ion-col>{{ item.seccion }}</ion-col>
+          <ion-col>{{ item.fecha }}</ion-col>
+          <ion-col>{{ item.hora }}</ion-col>
+        </ion-row>
+      </ng-container>
+      <ng-container *ngIf="asistencia && asistencia.length === 0">
+        <p>No hay asistencias registradas.</p>
+      </ng-container>
+    </table>
+  </div>
+</ion-content>

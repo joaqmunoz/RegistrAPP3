@@ -1,0 +1,38 @@
+<ion-button class="volver-button" (click)="goToBack()">Volver</ion-button>
+<ion-content>
+  <div class="login-card-container">
+    <ion-icon name="person-circle" class="user-icon"></ion-icon>
+ 
+    <ion-card class="login-card">
+      <ion-card-content class="card-content">
+        <div *ngIf="errorMessage" class="error-message">
+          <ion-text color="danger">
+            <p>{{ errorMessage }}</p>
+          </ion-text>
+        </div>
+
+        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+          <div class="input-container">
+            <ion-item>
+              <ion-label position="floating" class="form-label">Ingrese su correo</ion-label>
+              <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating" class="form-label">Ingrese su contraseña</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="spacer"></div>
+
+          <ion-button expand="block" type="submit" style="background-color: #63badb; color: white;">Ingresar</ion-button>
+          <ion-button expand="block" class="recover-button" style="background-color: #63badb; color: white;" (click)="goToRecuperar()">Reestablecer Contraseña</ion-button>
+          <ion-button expand="block" class="recover-button" style="background-color: #63badb; color: white;" (click)="goToRegister()">
+            Registrarse
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
